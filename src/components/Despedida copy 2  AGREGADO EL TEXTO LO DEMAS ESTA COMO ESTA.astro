@@ -94,6 +94,14 @@
                 > para compartir juntos este día tan especial.
               </p>
 
+              <!-- TEXTO DE CONFIRMAR ASISTENCIA -->
+              <p
+                class="font-charm pt-10 text-xl md:text-3xl lg:text-4xl text-[#800020] font-bold mb-8"
+                id="mensaje-confirmar"
+              >
+                Por favor, haz clic para confirmar asistencia
+              </p>
+
               <!-- BOTÓN CONFIRMAR ASISTENCIA -->
               <div class="flex justify-center" id="boton-confirmar">
                 <a
@@ -152,6 +160,7 @@
       });
       gsap.set("#linea-decorativa", { opacity: 0, scale: 0.5 });
       gsap.set("#texto-confirmar", { opacity: 0, y: 20 });
+      gsap.set("#mensaje-confirmar", { opacity: 0, scale: 0.9, y: 20 });
       gsap.set("#boton-confirmar", { opacity: 0, scale: 0.8, y: 20 });
       gsap.set("#mensaje-final", { opacity: 0, scale: 0.9, y: 20 });
 
@@ -210,6 +219,17 @@
                 y: 0,
                 duration: 0.8,
                 ease: "power2.out",
+              },
+              0,
+            )
+            .to(
+              "#mensaje-confirmar",
+              {
+                opacity: 1,
+                scale: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "back.out(1.5)",
               },
               0,
             )
@@ -275,6 +295,7 @@
           });
           gsap.set("#linea-decorativa", { opacity: 0, scale: 0.5 });
           gsap.set("#texto-confirmar", { opacity: 0, y: 20 });
+          gsap.set("#mensaje-confirmar", { opacity: 0, scale: 0.9, y: 20 });
           gsap.set("#boton-confirmar", { opacity: 0, scale: 0.8, y: 20 });
           gsap.set("#mensaje-final", { opacity: 0, scale: 0.9, y: 20 });
         },
