@@ -46,7 +46,7 @@
                     class="relative w-full overflow-visible"
                     id="foto-container"
                 >
-                    <div class="relative flex justify-center">
+                    <div class="flex justify-center">
                         <div class="relative">
                             <img
                                 src="/imagenes/Quinceañera.webp"
@@ -74,6 +74,27 @@
                                 id="mari-3"
                             />
                         </div>
+                    </div>
+
+                    <!-- Indicador esquina inferior derecha -->
+                    <div
+                        id="scroll-indicator"
+                        style="position: absolute; right: 6px; bottom: 20px; z-index: 30; display: flex; flex-direction: column; align-items: center; gap: 4px; animation: scrollPulse 1.5s ease-in-out infinite;"
+                    >
+                        <!-- Círculo con 3 flechas -->
+                        <div style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid #800020; background: rgba(255,255,255,0.82); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" viewBox="0 0 24 14" fill="none" stroke="#800020" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="2 2 12 11 22 2"></polyline>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" viewBox="0 0 24 14" fill="none" stroke="#800020" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.6;">
+                                <polyline points="2 2 12 11 22 2"></polyline>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" viewBox="0 0 24 14" fill="none" stroke="#800020" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.3;">
+                                <polyline points="2 2 12 11 22 2"></polyline>
+                            </svg>
+                        </div>
+                        <!-- Texto debajo -->
+                        <p style="font-family: 'Crimson Text', serif; font-size: 12px; color: #800020; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; background: rgba(255,255,255,0.75); padding: 2px 6px; border-radius: 4px; font-weight: 600;">Deslizar abajo</p>
                     </div>
                 </div>
             </div>
@@ -232,6 +253,7 @@
         );
 
         nombreCascadaElegante();
+
     });
 </script>
 
@@ -245,5 +267,10 @@
     .letra-cascada:hover {
         transform: translateY(-3px) scale(1.05) !important;
         text-shadow: 0 0 12px rgba(78, 104, 75, 0.5) !important;
+    }
+
+    @keyframes scrollPulse {
+        0%, 100% { transform: translateY(0px); opacity: 1; }
+        50%       { transform: translateY(7px); opacity: 0.7; }
     }
 </style>
